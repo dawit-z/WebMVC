@@ -8,13 +8,12 @@
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>Home Page</title>
-        <style>
-        </style>
         <link rel="stylesheet" href="~/css/custom.css" />
     </head>
     <body>
         <h1>Future Value Calculator</h1>
         <form asp-action="Index" method="post">
+            <div asp-validation-summary="All"></div>
             <div>
                 <label asp-for="MonthlyInvestment">Monthly Investment:</label>
                 <input asp-for="MonthlyInvestment" />
@@ -28,11 +27,11 @@
                 <input asp-for="Years" />
             </div>
             <div>
-                <label>Future Value:</label>
+                 <label>Future Value:</label>
                 <input value="@ViewBag.FV.ToString("C2")" readonly />
             </div>
             <button type="submit">Calculate</button>
-            <button asp-action="Index">Clear</button>
+            <a asp-action="Index">Clear</a>
         </form>
     </body>
 </html>

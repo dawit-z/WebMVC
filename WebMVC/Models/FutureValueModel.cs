@@ -5,15 +5,15 @@ namespace WebMVC.Models
     public class FutureValueModel
     {
         [Required(ErrorMessage = "Please enter a monthly investment amount.")]
-        [Range(1, 500, ErrorMessage = "Value must be between 1 and 500")]
+        [Range(1, 500, ErrorMessage = "Monthly Amount must be between 1 and 500")]
         public decimal? MonthlyInvestment { get; set; }
 
         [Required(ErrorMessage = "Please enter a Yearly Interest Rate.")]
-        [Range(0.1, 10.0, ErrorMessage = "Value must be between .1 and 10")]
+        [Range(0.1, 10.0, ErrorMessage = "Yearly Interest Rate must be between .1 and 10")]
         public decimal? YearlyInterestRate { get; set; }
 
         [Required(ErrorMessage = "Please enter # of year(s).")]
-        [Range(1, 50, ErrorMessage = "Value must be between 1 and 50")]
+        [Range(1, 50, ErrorMessage = "# of Year(s) must be between 1 and 50")]
         public int? Years { get; set; }
 
         public decimal? CalculateFutureValue()
